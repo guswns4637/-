@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/js/tempusdominus-bootstrap-4.min.js"></script>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/css/tempusdominus-bootstrap-4.min.css" />
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <link rel="stylesheet" href="/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.datepicker.regional['ko'] = {
+                closeText: '닫기',
+                prevText: '이전달',
+                nextText: '다음달',
+                currentText: '오늘',
+                monthNames: ['1월(JAN)', '2월(FEB)', '3월(MAR)', '4월(APR)', '5월(MAY)', '6월(JUN)',
+                    '7월(JUL)', '8월(AUG)', '9월(SEP)', '10월(OCT)', '11월(NOV)', '12월(DEC)'],
+                monthNamesShort: ['1월', '2월', '3월', '4월', '5월', '6월',
+                    '7월', '8월', '9월', '10월', '11월', '12월'],
+                dayNames: ['일', '월', '화', '수', '목', '금', '토'],
+                dayNamesShort: ['일', '월', '화', '수', '목', '금', '토'],
+                dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
+                weekHeader: 'Wk',
+                dateFormat: 'yy-mm-dd',
+                firstDay: 0,
+                isRTL: false,
+                showMonthAfterYear: true,
+                yearSuffix: '',
+                showOn: "button",
+                buttonImage: "http://jqueryui.com/resources/demos/datepicker/images/calendar.gif",
+                buttonImageOnly: true,
+                // buttonText: "달력",
+                showButtonPanel: true,
+                changeMonth: true,
+                changeYear: true,
+                showButtonPanel: true,
+                yearRange: 'c-99:c+99',
+            };
+            $.datepicker.setDefaults($.datepicker.regional['ko']);
+
+            $('#sdate').datepicker();
+            $('#sdate').datepicker("option", "maxDate", $("#edate").val());
+            $('#sdate').datepicker("option", "onClose", function (selectedDate) {
+                $("#edate").datepicker("option", "minDate", selectedDate);
+            });
+
+            $('#edate').datepicker();
+            $('#edate').datepicker("option", "minDate", $("#sdate").val());
+            $('#edate').datepicker("option", "onClose", function (selectedDate) {
+                $("#sdate").datepicker("option", "maxDate", selectedDate);
+            });
+        });
+
+
+    </script>
+
+
+
+
+
+    <title>skyservice-main</title>
+
+    <style type="text/css">
+        * {
+            font-family: 'Gowun Batang', serif;
+        }
+
+        .img {
+            width: 800px;
+            height: 450px;
+
+            background-image: url("https://www.gasinamoo.com/files/attach/images/154/706/011/da7ca5ce850922a7fdc71f8be919fc43.jpg");
+            background-position: center;
+            background-size: cover;
+        }
+
+
+        .notice {
+            color: red;
+            width: 800px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+
+        .btn-order {
+            margin: auto;
+            width: 100px;
+
+            display: block;
+        }
+
+        .wrap {
+            margin: auto;
+            width: 800px;
+        }
+
+        .menuBar {
+            padding: 0;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 30px;
+            background-color: linen;
+        }
+
+        ul:after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        li {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: 4B4B4B;
+            text-align: center;
+            padding: 14px 40px;
+            text-decoration: none;
+            font-size: x-large;
+        }
+
+        li a:hover:not(.active) {
+            background-color: gainsboro;
+        }
+
+        .active {
+            background-color:gainsboro;
+        }
+
+        .date_Input {
+            width: 120px;
+        }
+
+        .input_Boxes {
+            background-color: linen;
+            padding: 20px;
+            border-radius: 15px;
+        }
+    </style>
+
+<body>
+    <div class="wrap">
+        <ul class="menuBar">
+            <li><a class="active" href="http://127.0.0.1:5000/">Weather Service</a></li>
+            <li><a href="http://127.0.0.1:5000/weather">날씨</a></li>
+        </ul>
+        <div class="img"></div>
+        <div class="input_Boxes">
+            <div style="float: left; margin-right: 30px;" class="시//도">
+                <div style="float: left;" class="input-group-prepend">
+                    <label class="input-group-text" for="inputGroupSelect01">시/도</label>
+                </div>
+                <select style="float: left;" class="custom-select" id="inputGroupSelect01">
+                    <option selected></option>
+                    <option value="1">강원도</option>
+                    <option value="2">경기도</option>
+                    <option value="3">경상남도</option>
+                    <option value="4">경상북도</option>
+                    <option value="5">광주광역시</option>
+                    <option value="6">대구광역시</option>
+                    <option value="7">대전광역시</option>
+                    <option value="8">부산광역시</option>
+                </select>
+            </div>
+            <div style="float: left; margin-right: 30px;" class="select_Airport">
+                <div style="float: left;" class="input-group-prepend">
+                    <label class="input-group-text" for="inputGroupSelect01">읍/면/동</label>
+                </div>
+                <select style="float: left;" class="custom-select" id="inputGroupSelect01">
+                    <option selected></option>
+                    <option value="1">구룡포읍</option>
+                    <option value="2">오천읍</option>
+                    <option value="3">대이동</option>
+                    <option value="4">동해면</option>
+                    <option value="5">상대동</option>
+                </select>
+            </div>
+            <div style="float: left; margin-bottom: 30px;" class="search_FlightNumber">
+                <input type="text" class="form-control" aria-label="Default"
+                    aria-describedby="inputGroup-sizing-default">
+            </div>
+            <div style="display: inline-block; float: left; margin-right: 30px;" class="select_Time">
+                <input type='time' /> ~ <input type='time' />
+            </div>
+            <div style="display: inline-block;">
+                <p>출발일: <input class="date_Input" type="text" id="sdate">
+                    ~ 도착일: <input class="date_Input" type="text" id="edate">
+            </div>
+        </div>
+        <button style="margin-top: 20px;" type="button" onclick="order()"
+            class="btn btn-primary btn-order">조회하기</button>
+
+        	<table style="margin-top: 20px;" class="table" id="tables">
+                <thead>
+                  <tr>
+                    <th scope="col">시간</th>
+                    <th scope="col">출발지</th>
+                    <th scope="col">도착지</th>
+                    <th scope="col">항공사</th>
+                    <th scope="col">편명</th>
+                    <th scope="col">탑승구</th>
+                    <th scope="col">현황</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">18:00</th>
+                    <td>서울</td>
+                    <td>부산</td>
+                    <td>에어부산</td>
+                    <td>C8</td>
+                    <td>저쪽</td>
+                    <td>꽉참</td>
+                </tr>
+                  <!-- <tr>
+                    <th scope="row">신사임당</th>
+                    <td>2</td>
+                    <td>서울시 영등포구</td>
+                    <td>010-1234-5678</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">장영실</th>
+                    <td>1</td>
+                    <td>부산시 중구</td>
+                    <td>010-1234-5678</td>
+                  </tr>
+                </tbody> -->
+              </table>
+    </div>
+
+</body>
+
+</html>
